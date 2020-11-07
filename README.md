@@ -1,6 +1,6 @@
 # Multi-Blockchain Wallet in Python
 
-![icon](Images/icon.png)
+![icon](icon.png)
 
 ## Background and Wallet Description 
 
