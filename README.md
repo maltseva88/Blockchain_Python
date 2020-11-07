@@ -69,27 +69,18 @@ Execute the following steps:
 
 Wallet.py files runs all the functions which interact with hd-wallet-derive using the command line. The function below calls out the dictionary of coins with addresses and privkeys.
 
- `def derive_wallets(coin)`:
- 
-    `command = f'./derive -g --mnemonic="{mnemonic}" --cols=path,address,privkey,pubkey --format=json --coin="{coin}" --numderive= 2'`
-    
-    `p = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)`
-    
-    `output, err = p.communicate()`
-    
-    `p_status = p.wait()`
-    
-    `keys = json.loads(output)`
-    
-    `return keys`
-  
-`coins = {`
-    `ETH: derive_wallets(ETH),`
-    
-    `BTCTEST: derive_wallets(BTCTEST)`
-    
-`}`
-`print(coins)`
+```def derive_wallets(coin):
+     command = f'./derive -g --mnemonic="{mnemonic}" --cols=path,address,privkey,pubkey --format=json --coin="{coin}" --numderive= 2'
+     p = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)`
+     output, err = p.communicate()
+     p_status = p.wait()
+     keys = json.loads(output)
+     return keys
+  coins = {
+    ETH: derive_wallets(ETH),
+    BTCTEST: derive_wallets(BTCTEST)
+   }
+print(coins)```
 
 ![eth_btc](screen_shots/eth_btc.png)
 
