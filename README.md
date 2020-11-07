@@ -10,7 +10,7 @@ also supports non-standard derivation paths for the most popular wallets out the
 
 `hd-wallet-derive` is "universal" wallet and can manage billions of addresses across 300+ coins.
 
-In this assignment, I will only get 2 coins working: Ethereum and Bitcoin Testnet.
+For this exercise, I will only get 2 coins working: Ethereum and Bitcoin Testnet.
 Ethereum keys are the same format on any network, so the Ethereum keys should work with a custom networks or testnets.
 
 
