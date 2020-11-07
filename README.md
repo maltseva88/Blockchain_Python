@@ -86,7 +86,17 @@ print(coins)
  
 ![eth_btc](screen_shots/eth_btc.png)
 
+To transfer money from one account to another you will need to run `send_tx` functions. 
 
-
+ ```shell
+def send_tx(coin, account, to, amount):
+    tx = create_tx(coin, account, to, amount)
+    signed_tx = account.sign_transaction(tx)
+    if coin == ETH: 
+        return w3.eth.sendRawTransaction(signed.rawTransaction)
+    elif coin == BTCTEST: 
+        return NetworkAPI.broadcast_tx_testnet(signed_tx)
+ ```
+ In my case I ran this function in wallet.py file: `send_tx(BTCTEST, Account_one, address_two, 0.002)` to send BTCTEST from one account to another (see folder screen_shots for more imagies). 
 
 
