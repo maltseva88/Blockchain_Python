@@ -38,11 +38,7 @@ Execute the following steps:
 
 * Navigate to the [Github website](https://github.com/dan-da/hd-wallet-derive) for the `hd-wallet-derive` library and scroll down to the installation instructions.
 
- ![hd-wallet-derive-github](Images/hd-wallet-derive-github.png)
-
 * Next, open a terminal and execute the following commands. If you are using Windows, you will need to open the `git-bash` GUI via `C:\Program Files\Git\bin\bash.exe` directly to enable something called `tty` mode that makes the terminal more compatible with Unix systems. Once installed, you may move back to using the usual `git-bash` terminal.
-
-> **Warning**: When cloning the project be conscious of what folder you are cloning the files into. It would probably be best to clone it into your `Blockchain-Tools` folder.
 
  ```shell
  git clone https://github.com/dan-da/hd-wallet-derive
@@ -74,18 +70,27 @@ Execute the following steps:
 Wallet.py files runs all the functions which interact with hd-wallet-derive using the command line. The function below calls out the dictionary of coins with addresses and privkeys.
 
  `def derive_wallets(coin)`:
+ 
     `command = f'./derive -g --mnemonic="{mnemonic}" --cols=path,address,privkey,pubkey --format=json --coin="{coin}" --numderive= 2'`
+    
     `p = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)`
+    
     `output, err = p.communicate()`
+    
     `p_status = p.wait()`
+    
     `keys = json.loads(output)`
+    
     `return keys`
   
 `coins = {`
     `ETH: derive_wallets(ETH),`
+    
     `BTCTEST: derive_wallets(BTCTEST)`
+    
 `}`
 `print(coins)`
+
 ![eth_btc](screen_shots/eth_btc.png)
 
 
